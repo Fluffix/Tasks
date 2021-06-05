@@ -67,6 +67,7 @@ void main() {
   var a;
   var b;
   int sym;
+  print('Для выхода из программы введите "stop"');
   do {
     print('Введите первое число:');
     a = stdin.readLineSync(encoding: Encoding.getByName('utf-8'));
