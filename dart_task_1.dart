@@ -76,13 +76,8 @@ void main() {
   print(
       'Пункт 4: $newList - создание подсписка в 3 элемента из первоначального списка');
   //Пункт 5:
-  list.forEach((element) {
-    if (element == 5) {
-      print(
-          'Пункт 5: ${list.indexOf(element)} - индекс элемента со значением 5');
-    }
-    ;
-  });
+  print(
+      'Пункт 5: ${list.indexWhere((element) => element == 5)} - индекс элемента со значением 5');
   //Пункт 6:
   list.removeWhere((element) => 5 <= element && element <= 8);
   print('Пункт 6: $list - удалены элементы со значениями от 5 до 8');
