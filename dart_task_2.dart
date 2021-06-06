@@ -64,36 +64,20 @@ void main() {
 
   //Задача 3:
   print('\nЗадача 3:');
-  var a;
-  var b;
-  int sym;
-  print('Для выхода из программы введите "stop"');
+  var input;
+  int sum = 0;
+  print('Для выхода из программы введите "stop"\n');
   do {
-    print('Введите первое число:');
-    a = stdin.readLineSync(encoding: Encoding.getByName('utf-8'));
-    if (a == 'stop') {
-      print('Выход...');
-      break;
-    }
+    stdout.write('Введите число: ');
+    input = stdin.readLineSync(encoding: Encoding.getByName('utf-8'));
     try {
-      a = int.parse(a);
+      sum += int.parse(input);
     } catch (e) {
-      print('Вы ввели некорректные данные');
+      input == 'stop'
+          ? print('Выход...')
+          : print('Вы ввели некорректные данные, попробуйте снова\n');
       continue;
     }
-    print('Введите второе число:');
-    b = stdin.readLineSync(encoding: Encoding.getByName('utf-8'));
-    if (b == 'stop') {
-      print('Выход...');
-      break;
-    }
-    try {
-      b = int.parse(b);
-    } catch (e) {
-      print('Вы ввели некорректные данные');
-      continue;
-    }
-    sym = a + b;
-    print('$sym - сумма введённых чисел');
-  } while (sym == null);
+    print('Сумма введённых чисел равна $sum\n');
+  } while (input != 'stop');
 }
