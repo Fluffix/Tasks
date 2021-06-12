@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "Dart & Flutter",
-            "program": "dart_task_2.dart",
+            "program": "dart_task_3.dart",
             "request": "launch",
             "type": "dart",
             "console" : "terminal"
