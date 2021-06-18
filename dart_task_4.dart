@@ -161,8 +161,6 @@ mixin Painter {
       case Colors.blue:
         colorName = 'синего';
         break;
-      default:
-        colorName = 'не покрашенного';
     }
   }
 }
