@@ -14,7 +14,7 @@ void main() {
   sportcar.run();
   //Задача 3:
   print('\nЗадача 3:');
-  final Generics generics = Generics(value: truck);
+  final Generics generics = Generics(value: truck.enginePower);
   print(generics.convertToString());
 }
 
