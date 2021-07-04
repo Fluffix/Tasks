@@ -33,7 +33,7 @@ void main() {
 2)год поступления
 3)текущий курс*/
 class User {
-  const User({this.firstName, this.lastName});
+  const User({required this.firstName, required this.lastName});
 
   final String firstName;
   final String lastName;
@@ -43,7 +43,7 @@ class User {
 }
 
 class Student extends User {
-  const Student({this.yearOfAdmission, firstName, lastName})
+  const Student({required this.yearOfAdmission, firstName, lastName})
       : super(firstName: firstName, lastName: lastName);
 
   final int yearOfAdmission;
@@ -98,13 +98,13 @@ setColor(Colors color). В зависимости от значения enum, м
 Максимальная скорость = мощности двигателя / вес автомобиля.
 В Truck и SportCar в методе run выполните метод runEngine*/
 abstract class Car with Painter {
-  double weight;
+  late double weight;
 
   void run();
 }
 
 class Truck extends Car with Engine {
-  Truck({Colors color}) {
+  Truck({required Colors color}) {
     setColor(color);
   }
 
@@ -123,7 +123,7 @@ class Truck extends Car with Engine {
 }
 
 class Sportcar extends Car with Engine {
-  Sportcar({Colors color}) {
+  Sportcar({required Colors color}) {
     setColor(color);
   }
   @override
@@ -149,7 +149,7 @@ class Bike with Painter {
 enum Colors { red, greeen, blue }
 
 mixin Painter {
-  String colorName;
+  late String colorName;
   setColor(Colors color) {
     switch (color) {
       case Colors.red:
@@ -176,9 +176,9 @@ mixin Engine on Car {
 /*Задача 3: Используя обобщения написать класс с методом, приводящим полученное
 значение в строку.*/
 class Generics<T> {
-  Generics({this.value});
+  Generics({required this.value});
 
-  final T value;
+  T value;
 
   String convertToString() {
     return value.toString();

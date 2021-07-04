@@ -71,7 +71,7 @@ void main() {
   print('Для выхода из программы введите "stop"\n');
   do {
     stdout.write('Введите число: ');
-    input = stdin.readLineSync(encoding: Encoding.getByName('utf-8'));
+    input = stdin.readLineSync();
     try {
       sum += int.parse(input);
     } catch (e) {

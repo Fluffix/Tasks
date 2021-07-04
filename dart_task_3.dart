@@ -5,13 +5,13 @@ void main() {
   функцию, без возвращаемого значения. Функция меняет порядок слов на обратный.
   Например было ‘hello world’, стало ‘world hello’*/
   String text = 'hello world';
-  reverseText(text);
+  reverseText(text: text);
 
   /*Задание 2: Создайте и проинициализируйте массив чисел с произвольным
   размером. Напишите функцию, которая вычисляет среднее арифметическое число
   массива и возвращает double результат. Распечатайте результат в консоли.*/
   List<int> list = [5, 10, -6, 0];
-  print(average(list));
+  print(average(list: list));
 
   /*Задание 3: Модернизируйте предыдущие функции так, чтобы на вход они
   принимали необходимые данные для работы. Параметр должен быть опциональным.*/
@@ -42,7 +42,7 @@ void main() {
   print('Решение уравнения: ' + findTheRoots(a: a, b: b, c: c));
 }
 
-void reverseText([String text]) {
+void reverseText({required String text}) {
   var splitText = text.split(' ');
   String reverseText = '';
   splitText.forEach((element) {
@@ -54,7 +54,7 @@ void reverseText([String text]) {
   print(reverseText);
 }
 
-double average([List<int> list]) {
+double average({required List<int> list}) {
   double sum = 0;
   list.forEach((element) {
     sum += element;
@@ -62,7 +62,7 @@ double average([List<int> list]) {
   return sum / list.length;
 }
 
-String findTheRoots({int a, int b, int c}) {
+String findTheRoots({required int a, required int b, required int c}) {
   var discriminant;
   var x1;
   var x2;
